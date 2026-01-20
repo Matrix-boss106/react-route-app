@@ -5,7 +5,7 @@ import { createRoot } from 'react-dom/client'
 import App from './App.jsx'
 
 // router Imports
-import {createBrowserRouter, RouterProvider} from "react-router-dom"
+import { createBrowserRouter, RouterProvider } from "react-router-dom"
 import Home from "./routes/Home.jsx"
 import About from './routes/About.jsx'
 import Services from './routes/Services.jsx'
@@ -17,27 +17,27 @@ import ProductDeteil from './routes/ProductDeteil.jsx'
 const route = createBrowserRouter([
   {
     path: "/",
-    element: <App/>,
+    element: <App />,
     children: [
       {
-      index: true,
-      element: <Home />
+        index: true,
+        element: <Home />
       },
       {
-      path: "about",
-      element: <About />
+        path: "about",
+        element: <About />
       },
       {
-      path: "services",
-      element: <Services />
+        path: "services",
+        element: <Services />
       },
       {
-      path: "contact",
-      element: <Countact />
+        path: "contact",
+        element: <Countact />
       },
       {
         path: "product",
-        element: <Products />        
+        element: <Products />
       },
       {
         path: "feature",
@@ -47,12 +47,15 @@ const route = createBrowserRouter([
         path: "product/:id",
         element: <ProductDeteil />,
       }
-  ]
+    ]
   }
-]);
+],
+  {
+    baseName: "/react-route-app/"
+  });
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <RouterProvider router={route}/>
+    <RouterProvider router={route} />
   </StrictMode>,
 )
