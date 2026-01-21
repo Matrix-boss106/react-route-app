@@ -38,7 +38,7 @@ function Services() {
   }
   const subHandler = () => {
     if (count === 0) {
-      setText("conut cannot be negetive");
+      setText("count cannot be negetive");
       return;
     }
     setCount(count => count - 1)
